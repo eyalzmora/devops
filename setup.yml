@@ -18,3 +18,5 @@
   - name: Start the docker service
     become: yes
     service: name=docker state=started
+  - name: Download and unziptar maven
+    unarchive: dest=/home/ec2-user src=http://apache.mivzakim.net/maven/maven-3/3.3.9/binaries/apache-maven-3.3.9-bin.tar.gz copy=no creates=/home/ec2-user/apache-maven-3.3.9
